@@ -1,0 +1,154 @@
+/* 本地 Inter 字体配置 */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/Inter-Italic-VariableFont_slnt,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
+
+/* 页面背景 */
+body, html, #root {
+  font-family: 'Inter', 'Inter Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'PingFang SC', 'HarmonyOS Sans', 'Microsoft YaHei', Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #333333;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 主题CSS变量 */
+:root {
+  /* 浅色主题变量 */
+  --color-bg: #f7f7f7;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f8f9fa;
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
+  --color-text: #374151;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-primary: #ec4899;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* 深色主题变量 */
+body.dark {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-surface-hover: #21262d;
+  --color-border: #30363d;
+  --color-border-light: #21262d;
+  --color-text: #f0f6fc;
+  --color-text-secondary: #8b949e;
+  --color-text-muted: #6e7681;
+  --color-primary: #ec4899;
+  --color-success: #238636;
+  --color-warning: #d1a103;
+  --color-danger: #da3633;
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Shadcn UI 组件样式重写 */
+.dark .bg-white {
+  background-color: var(--color-surface) !important;
+}
+
+.dark .text-gray-900,
+.dark .text-gray-800 {
+  color: var(--color-text) !important;
+}
+
+.dark .text-gray-600,
+.dark .text-gray-700 {
+  color: var(--color-text-secondary) !important;
+}
+
+.dark .text-gray-400,
+.dark .text-gray-500 {
+  color: var(--color-text-muted) !important;
+}
+
+.dark .border-gray-200,
+.dark .border-gray-300 {
+  border-color: var(--color-border) !important;
+}
+
+.dark .bg-gray-100,
+.dark .bg-gray-50 {
+  background-color: var(--color-surface-hover) !important;
+}
+
+.dark .hover\\:bg-gray-50:hover,
+.dark .hover\\:bg-gray-100:hover {
+  background-color: var(--color-surface-hover) !important;
+}
+
+/* 输入框样式 */
+.dark input,
+.dark textarea {
+  background-color: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text) !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--color-text-muted) !important;
+}
+
+/* 按钮样式 */
+.dark button[data-variant="outline"] {
+  background-color: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text-secondary) !important;
+}
+
+.dark button[data-variant="outline"]:hover {
+  background-color: var(--color-surface-hover) !important;
+  color: var(--color-text) !important;
+}
+
+/* 下拉菜单样式 */
+.dark [data-radix-popper-content-wrapper] {
+  background-color: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+}
+
+/* Badge 样式 */
+.dark .bg-gray-100 {
+  background-color: var(--color-surface-hover) !important;
+  color: var(--color-text-secondary) !important;
+}
+
+/* 平滑过渡 */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
