@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 // 这是虎子测试 SSH 提交的一行注释
+# AizhinengZSK 项目介绍
+
+这是虎子的智能知识库项目，用于学习 Git 推送和 SSH 配置测试。
+
