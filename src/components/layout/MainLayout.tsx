@@ -81,21 +81,11 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     <div 
       className="min-h-screen flex font-sans relative overflow-hidden"
       style={{ 
-        // 🎨 更温暖的米白色调，完全匹配目标
-        background: 'linear-gradient(45deg, #FAF9F7 0%, #F5F4F2 100%)',
+        // 🎨 精确的对标颜色 - 微微带暖意的浅灰
+        background: '#E8E9E5',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
       }}
     >
-      {/* 🪟 进一步减轻磨砂玻璃蒙版 */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(6px)',
-          WebkitBackdropFilter: 'blur(6px)'
-        }}
-      />
-
       {/* 🎯 三段式布局开始 */}
       
       {/* 左侧：极简导航栏 */}
@@ -105,10 +95,8 @@ const MainLayout = ({ children }: MainLayoutProps) => {
           <div 
             className="w-10 h-10 rounded-full flex items-center justify-center"
             style={{
-              background: 'rgba(255, 255, 255, 0.6)',
-              backdropFilter: 'blur(4px)',
-              WebkitBackdropFilter: 'blur(4px)',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.8), 0 1px 2px rgba(0,0,0,0.05)'
+              background: 'rgba(255, 255, 255, 0.9)',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
             }}
           >
             <Brain className="h-5 w-5 text-gray-700" />
@@ -129,13 +117,11 @@ const MainLayout = ({ children }: MainLayoutProps) => {
                   className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-105"
                   style={{
                     background: isActive 
-                      ? 'rgba(255, 255, 255, 0.8)' 
-                      : 'rgba(255, 255, 255, 0.5)',
-                    backdropFilter: 'blur(4px)',
-                    WebkitBackdropFilter: 'blur(4px)',
+                      ? 'rgba(255, 255, 255, 1)' 
+                      : 'rgba(255, 255, 255, 0.8)',
                     boxShadow: isActive 
-                      ? 'inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 6px rgba(0,0,0,0.1)'
-                      : 'inset 0 1px 0 rgba(255,255,255,0.8), 0 1px 2px rgba(0,0,0,0.05)',
+                      ? '0 2px 8px rgba(0,0,0,0.08)'
+                      : '0 1px 3px rgba(0,0,0,0.05)',
                     color: isActive ? '#000' : 'rgba(0,0,0,0.8)'
                   }}
                 >
@@ -160,13 +146,11 @@ const MainLayout = ({ children }: MainLayoutProps) => {
                   className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-105"
                   style={{
                     background: isActive 
-                      ? 'rgba(255, 255, 255, 0.8)' 
-                      : 'rgba(255, 255, 255, 0.5)',
-                    backdropFilter: 'blur(4px)',
-                    WebkitBackdropFilter: 'blur(4px)',
+                      ? 'rgba(255, 255, 255, 1)' 
+                      : 'rgba(255, 255, 255, 0.8)',
                     boxShadow: isActive 
-                      ? 'inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 6px rgba(0,0,0,0.1)'
-                      : 'inset 0 1px 0 rgba(255,255,255,0.8), 0 1px 2px rgba(0,0,0,0.05)',
+                      ? '0 2px 8px rgba(0,0,0,0.08)'
+                      : '0 1px 3px rgba(0,0,0,0.05)',
                     color: isActive ? '#000' : 'rgba(0,0,0,0.8)'
                   }}
                 >

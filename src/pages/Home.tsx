@@ -46,33 +46,31 @@ const Home = () => {
 
   return (
     <div className="h-screen flex flex-col justify-center items-center relative z-10 px-8">
-      {/* 🎨 中央品牌Logo区域 */}
-      <div className="mb-16 text-center">
-        <div className="mb-8">
-          {/* ima copilot Logo */}
-          <div className="text-6xl font-light tracking-wider mb-4" style={{ color: '#2B2B2B', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+      {/* 🎨 中央品牌Logo区域 - 确保显示正确的ima copilot */}
+      <div className="mb-12 text-center">
+        <div className="mb-6">
+          {/* ima copilot Logo - 确保正确显示 */}
+          <div className="text-5xl font-light tracking-wide mb-2" style={{ color: '#2B2B2B', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
             <span className="font-medium">ima</span>
-            <span className="ml-2 font-extralight text-gray-600">copilot</span>
+            <span className="ml-1 font-extralight text-gray-600">copilot</span>
           </div>
         </div>
       </div>
 
-      {/* 🔍 智能搜索框区域 */}
-      <div className="w-full max-w-2xl mb-20">
+      {/* 🔍 智能搜索框区域 - 纯净白色效果 */}
+      <div className="w-full max-w-2xl mb-16">
         <div 
           className="relative"
           style={{
-            background: 'rgba(255, 255, 255, 0.55)',
-            backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)',
-            borderRadius: '20px',
-            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.8), 0 2px 12px rgba(0,0,0,0.05)'
+            background: 'rgba(255, 255, 255, 0.95)',
+            borderRadius: '16px',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
           }}
         >
-          <div className="flex items-center p-2">
+          <div className="flex items-center p-1.5">
             {/* 用户头像占位 */}
-            <div className="w-8 h-8 rounded-full bg-gray-300 mr-3 ml-2 flex items-center justify-center">
-              <span className="text-sm font-medium text-gray-600">🐼</span>
+            <div className="w-7 h-7 rounded-full bg-gray-300 mr-2.5 ml-2 flex items-center justify-center">
+              <span className="text-xs font-medium text-gray-600">🐼</span>
             </div>
             
             {/* 搜索输入框 */}
@@ -81,23 +79,23 @@ const Home = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyPress={handleKeyPress}
-              className="flex-1 border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base placeholder:text-gray-500 h-12"
+              className="flex-1 border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base placeholder:text-gray-500 h-10"
               style={{ 
-                fontSize: '16px',
+                fontSize: '15px',
                 color: '#2B2B2B'
               }}
             />
             
             {/* 功能按钮区域 */}
-            <div className="flex items-center gap-2 mr-2">
+            <div className="flex items-center gap-1 mr-1.5">
               <button 
-                className="p-2 rounded-lg hover:bg-white/20 transition-colors"
+                className="p-1.5 rounded-lg hover:bg-white/20 transition-colors"
                 title="附件"
               >
                 📎
               </button>
               <button 
-                className="p-2 rounded-lg hover:bg-white/20 transition-colors"
+                className="p-1.5 rounded-lg hover:bg-white/20 transition-colors"
                 title="更多选项"
               >
                 ✂️
@@ -107,38 +105,37 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 📱 底部三大功能入口 */}
-      <div className="flex gap-8">
+      {/* 📱 底部三大功能入口 - 纯净白色效果 */}
+      <div className="flex gap-6">
         {mainFeatures.map((feature, index) => (
           <button
             key={index}
             onClick={feature.action}
-            className="group flex flex-col items-center p-6 rounded-2xl transition-all duration-200 hover:scale-105"
+            className="group flex flex-col items-center p-5 rounded-xl transition-all duration-200 hover:scale-105"
             style={{
-              background: 'rgba(255, 255, 255, 0.5)',
-              backdropFilter: 'blur(6px)',
-              WebkitBackdropFilter: 'blur(6px)',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.8), 0 2px 8px rgba(0,0,0,0.04)'
+              background: 'rgba(255, 255, 255, 0.9)',
+              boxShadow: '0 2px 6px rgba(0,0,0,0.04)'
             }}
           >
             {/* 图标 */}
             <div 
-              className="mb-3 p-3 rounded-xl group-hover:scale-110 transition-transform duration-200"
+              className="mb-2.5 p-2.5 rounded-lg group-hover:scale-110 transition-transform duration-200"
               style={{
-                background: 'rgba(255, 255, 255, 0.7)',
-                color: '#2B2B2B'
+                background: 'rgba(255, 255, 255, 1)',
+                color: '#2B2B2B',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
               }}
             >
               {feature.icon}
             </div>
             
             {/* 标题 */}
-            <div className="text-base font-medium mb-1" style={{ color: '#2B2B2B' }}>
+            <div className="text-sm font-medium mb-0.5" style={{ color: '#2B2B2B' }}>
               {feature.title}
             </div>
             
             {/* 描述 */}
-            <div className="text-sm text-center" style={{ color: 'rgba(43, 43, 43, 0.7)' }}>
+            <div className="text-xs text-center" style={{ color: 'rgba(43, 43, 43, 0.7)' }}>
               {feature.description}
             </div>
           </button>
